@@ -9,7 +9,7 @@ const options = ["DSA", "React", "JavaScript", "My Stories"];
 
 const Home = (props) => {
     return (
-        <>
+        <div className={styles['home-wrapper']}>
             <Header />
             <div className={styles["language-opt__wrappers"]}>
                 <div className={styles['options-wrapper']}>
@@ -34,7 +34,7 @@ const Home = (props) => {
                     </ol>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

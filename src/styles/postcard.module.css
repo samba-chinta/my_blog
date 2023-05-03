@@ -1,0 +1,76 @@
+.post-card__wrapper {
+    height: 120px;
+    background-color: var(--post-card-bg);
+    padding: 2em;
+    display: flex;
+    gap: 0 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post-logo {
+    width: 100px;
+    background-color: var(--card-bg);
+    display: grid;
+    place-items: center;
+    font-size: 3em;
+    font-family: var(--code-font);
+    color: #fff;
+    border-radius: 5px;
+}
+
+.post-details {
+    color: #fff;
+    font-family: var(--content-font);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    line-height: 36px;
+}
+
+.post-title {
+    font-size: var(--font-xl);
+    font-weight: 400;
+    text-decoration: none;
+    color: #fff;
+}
+
+.post-title:hover {
+    color: var(--primary-color);
+}
+
+.post-description {
+    font-family: var(--code-font);
+}
+
+.post-meta__wrapper {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    align-items: center;
+}
+
+.read-btn {
+    outline: none;
+    border: solid 1px #fff;
+    background-color: transparent;
+    color: #fff;
+    justify-self: flex-end;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.read-btn:hover {
+    background-color: #fff;
+    cursor: pointer;
+    color: #000;
+}
+
+@media screen and (max-width: 599px) {
+    .post-card__wrapper {
+        height: fit-content;
+    }
+    .post-logo {
+        display: none;
+    }
+}

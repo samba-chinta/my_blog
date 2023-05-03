@@ -1,0 +1,22 @@
+.preview-wrapper {
+    padding: 10px;
+    background-color: var(--blog-bg);
+    color: #fff;
+    font-family: var(--content-font);
+    overflow-y: scroll;
+}
+
+.blog-title {
+    font-weight: 400;
+}
+
+.meta {
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.main-content {
+    font-size: 14px;
+    margin: 20px 0;
+}
+

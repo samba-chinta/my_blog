@@ -1,0 +1,43 @@
+.blog-header__wrapper {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--blog-nav-bg);
+    height: 6em;
+    display: flex;
+}
+
+.blog-header {
+    margin: auto;
+    width: 70%;
+    color: var(--content-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blog-title__wrapper {
+    border-bottom: solid 1px #fff;
+}
+
+.blog-title {
+    font-size: var(--font-lg);
+    letter-spacing: 1px;
+    font-family: var(--code-font);
+}
+
+.portfolio-link__wrapper .portfolio-link {
+    text-decoration: none;
+    color: var(--content-color);
+    font-family: var(--content-font);
+}
+
+.portfolio-link:hover {
+    color: var(--primary-color);
+}
+
+@media screen and (max-width: 500px) {
+    .blog-header {
+        width: 90%;
+    }
+}

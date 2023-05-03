@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+:root {
+  --blog-nav-bg: hsl(252, 22%, 5%);
+  --blog-bg: hsl(240, 29%, 12%);
+  --card-bg: hsl(225, 31%, 18%);
+  --post-card-bg: hsl(240, 29%, 9%);
+  --content-color: rgb(255, 255, 255);
+  --primary-color: hsl(224, 97%, 49%);
+  --border-hover-color: hsl(225, 30%, 31%);
+  --font-sm: 1rem;
+  --font-md: 1.125rem;
+  --font-lg: 1.25rem;
+  --font-xl: 1.5rem;
+  --content-font: 'Poppins', sans-serif;
+  --code-font: 'Source Sans Pro', sans-serif;
+  --line-height: 26px;
+  --blog-card-padding: 0.5em;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}

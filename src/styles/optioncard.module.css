@@ -1,0 +1,26 @@
+.option-card__wrapper {
+    position: relative;
+    width: 120px;
+    text-align: center;
+    font-family: var(--content-font);
+    cursor: pointer;
+    border: solid 2px var(--card-bg);
+}
+
+.option-card__wrapper a {
+    text-decoration: none;
+    color: var(--content-color);
+    letter-spacing: 1px;
+    font-size: var(--font-sm);
+}
+
+.option-card__wrapper:hover {
+    border: solid 2px var(--border-hover-color);
+}
+
+@media screen and (max-width: 499px){
+    .option-card__wrapper {
+        width: 90px;
+        padding: 0.5rem;
+    }
+}

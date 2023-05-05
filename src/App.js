@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import database from './config/config';
+import { ref, child, get } from "firebase/database";
 
 import Home from './pages/Home';
 import MarkupEditor from './pages/MarkupEditor';
@@ -26,6 +28,20 @@ const BLOG_POSTS = [
 ]
 
 const App = (props) => {
+  useEffect(() => {
+    const getData = async () => {
+      get(child(ref(database), '/blogs')).then((snapshot) => {
+        if (snapshot.exists()) {
+          console.log(snapshot.val())
+        } else {
+          console.log("No Data Available")
+        }
+      }).catch(err => {
+        console.log(err);
+      })
+    }
+    getData()
+  }, [])
   return (
     <div>
       <Routes>

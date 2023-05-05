@@ -1,4 +1,6 @@
 import React, { useRef, useState } from "react";
+import { ref, push } from "firebase/database";
+import database from "../config/config";
 
 import styles from "../styles/editor.module.css";
 
@@ -11,11 +13,30 @@ import Preview from "../components/Preview";
  */
 
 const MarkupEditor = (props) => {
-    const [blogTitle, setBlogTitle] = useState("");
-    const [blogDescription, setBlogDescription] = useState("");
+    const blogTitle = useRef("");
+    const blogDescription = useRef("");
     const blogBody = useRef("");
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
     const [input, setInput] = useState("");
     const [tag, setTag] = useState("React");
+
+    const formSubmitHandler = (e) => {
+        e.preventDefault();
+        if (title && description && input && tag) {
+            push(ref(database, '/blogs', Math.random()), {
+                title,
+                description,
+                body: input,
+                tag: tag,
+                date: new Date().toDateString()
+            })
+        }
+        blogTitle.current.value = '';
+        blogDescription.current.value = '';
+        blogBody.current.value = '';
+        setInput('');
+    }
 
     const handleInput = (event) => {
         setInput(event.target.value);
@@ -35,21 +56,23 @@ const MarkupEditor = (props) => {
     return (
         <div className={styles["main-wrapper"]}>
             <div className={styles["markup-editor__wrapper"]}>
-                <form className={styles["markup-editor__form"]}>
+                <form className={styles["markup-editor__form"]} onSubmit={formSubmitHandler}>
                     <h2 className={styles["title"]}>New Post</h2>
                     <input
                         type="text"
                         className={styles["input-field"]}
+                        ref={blogTitle}
                         onChange={(e) => {
-                            setBlogTitle(e.target.value);
+                            setTitle(e.target.value);
                         }}
                         placeholder="Enter the Title"
                     />
                     <input
                         type="text"
                         className={styles["input-field"]}
+                        ref={blogDescription}
                         onChange={(e) => {
-                            setBlogDescription(e.target.value);
+                            setDescription(e.target.value);
                         }}
                         placeholder="Short Description"
                     />
@@ -148,7 +171,7 @@ const MarkupEditor = (props) => {
                 </form>
                 <div className={styles["preview-wrapper"]}>
                     <Preview
-                        title={blogTitle}
+                        title={blogTitle.current.value}
                         date={new Date().toDateString()}
                         tag={tag}
                         input={input}

@@ -5,6 +5,7 @@
     background-color: var(--blog-bg);
     display: grid;
     place-items: center;
+    overflow: scroll;
 }
 
 .markup-editor__wrapper {

@@ -1,0 +1,39 @@
+.topics-wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--blog-bg);
+}
+
+.topic-post__wrapper {
+    width: 100%;
+    padding: 2em 1em;
+    box-sizing: border-box;
+    background-color: var(--blog-bg);
+    display: grid;
+    place-items: center;
+}
+
+.blogs_main {
+    width: 70%;
+}
+
+.blog__list {
+    list-style: none;
+}
+
+.blog__list li {
+    margin: 10px 0;
+}
+
+.no-posts {
+    color: #fff;
+    font-size: 18px;
+    font-family: var(--content-font);
+    letter-spacing: 1px;
+}
+
+@media screen and (max-width: 499px) {
+    .blogs_main {
+        width: 100%;
+    }
+}

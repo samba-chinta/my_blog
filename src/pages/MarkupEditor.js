@@ -162,6 +162,7 @@ const MarkupEditor = (props) => {
                         <option value="react">React</option>
                         <option value="javascript">JavaScript</option>
                         <option value="dsa">DSA</option>
+                        <option value="blog">Blog</option>
                     </select>
                     <input
                         type="submit"

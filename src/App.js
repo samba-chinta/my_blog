@@ -76,6 +76,19 @@ const App = (props) => {
                         }
                     />
                 )}
+                {blogPosts && (
+                    <Route
+                        path="/blog"
+                        element={
+                            <Topics
+                                topic="Blog"
+                                topicBlogs={blogPosts.filter(
+                                    (post) => post.tag.toLowerCase() === "blog"
+                                )}
+                            />
+                        }
+                    />
+                )}
                 {blogPosts &&
                     blogPosts.map((post) => {
                         return (

@@ -5,7 +5,7 @@ import OptionCard from "../components/OptionCard";
 import PostCard from "../components/PostCard";
 import styles from "../styles/home.module.css";
 
-const options = ["DSA", "React", "JavaScript"];
+const options = ["DSA", "React", "JavaScript", "Blog"];
 
 const Home = (props) => {
     return (
